@@ -1,0 +1,188 @@
+% Space is at premium since we intend to be limited on one page.
+% 10pt is small enough, yet readable. Other options also make sense when considering the use case.
+\documentclass[10pt, a4paper, final, onecolumn, oneside, notitlepage]{article}
+
+% Big margins would waste valuable space.
+% We could set them manually, but it's much more convenient with geometry package.
+% Showframe may be used to see the margins while setting them.
+%\usepackage{showframe}
+\usepackage[top=0.25in, bottom=0.25in, left=0.5in, right=0.5in]{geometry}
+
+% We want to have good-looking clickable URLs to personal homepage or mailto links,
+% without having the red default borders around them.
+\usepackage[pdfborder={0 0 0}]{hyperref}
+
+% Fontawesome is used for the cool icons used throughout the CV
+\usepackage{fontawesome}
+
+% 1st, 2nd, etc
+\usepackage[super]{nth}
+
+% Our names are utf8
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Entries in each CV section will be arranged into borderless tables.
+% To make the tables more distinguishable, each will be colored in a light gray color, except for the table's description.
+\usepackage{colortbl}
+\newcommand{\gray}{\rowcolor[gray]{.92}} % For simplicity, the new gray command is defined.
+
+% Spacing and rules between CV sections and between tables in a section
+% Change the space between and within sections so that conent fits
+% on A4 nicely
+\newcommand{\sectionspacing}[0]{ \vspace{10pt} } % Space between sections
+\newcommand{\innersectionspacing}[0]{ \vspace{10pt} } % Space within section between tables
+\newcommand{\halfsectionspacing}[0]{ \vspace{4pt} }
+\newcommand{\sectionrule}[0]{ \rule[6pt]{\textwidth}{0.5pt} } % Rule between sections
+\newcommand{\tablerule}[0]{ \rule{0pt}{13pt} } % Vertical rule, for a description after each table, to make the description a few pixels lower under the gray part of the table.
+
+% Redefined \section{} command so that it looks like we want it
+\renewcommand{\section}[1]{\sectionspacing {\large \scshape #1} \sectionrule}
+
+
+
+
+\begin{document}
+\begin{center}
+\pagenumbering{gobble} % Turn off page numbering
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% NAME AND INFO %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% If the \Huge size is too small for a particular use, link below should be consulted
+% https://en.wikibooks.org/wiki/LaTeX/Fonts#Arbitrary_font_size
+{
+\Huge
+\scshape
+Petar Šegina
+}
+
+\innersectionspacing
+
+% There are many other cool icons or social networks or contact info that could be used here
+{
+{\large\faHome} Zagreb, Croatia
+\hspace{16pt}
+{\large\faEnvelope} \href{mailto:psegina@ymail.com}{\texttt{psegina@ymail.com}}
+
+{\large\faPhone} \href{tel:+385919498650}{\texttt{+385919498650}}
+\hspace{16pt}
+{\large\faGithub} \href{https://www.github.com/mrPjer}{\texttt{github.com/mrPjer}}
+\hspace{16pt}
+{\large\faLinkedin} \href{https://www.linkedin.com/in/psegina}{\texttt{linkedin.com/in/psegina}}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% WORK EXPERIENCE %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The table's code may be a bit tedious to read.
+% An option is to make \newcommand for the row entries, but
+% this way offers more flexibility which I personally did use.
+
+% Paragraph width factors were determined experimentally, sadly.
+\section{Work Experience}
+\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+\gray {\scshape Employer} & \textbf{Microsoft} \hfill Dublin, Ireland \\
+\gray {\scshape Period} & \textbf{July 2016 --- October 2016} \\
+\gray {\scshape Job Title} & \textbf{Software Engineering Intern} \\
+\tablerule & Supported the migration between two build systems by making sure existing test automation continued to work by analyzing, debugging and improving existing solutions.
+\end{tabular}
+
+\innersectionspacing
+
+\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+\gray {\scshape Employer} & \textbf{CROZ d.o.o.} \hfill Zagreb, Croatia \\
+\gray {\scshape Period} & \textbf{June 2012 --- present} \\
+\gray {\scshape Job Title} & \textbf{Software, tools, architecture and integration consultant}\\
+\tablerule & Worked on various aspects (front end, back end, mobile) of projects of all sizes and gained experience in building and integrating larger systems, as well as leading smaller teams and projects.
+\end{tabular}
+
+\innersectionspacing
+
+\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+\gray {\scshape Employer} & \textbf{Partners in Enterprise} \hfill Zagreb, Croatia \\
+\gray {\scshape Period} & \textbf{September 2011 --- October 2015} \hfill (remote) \\
+\gray {\scshape Job Title} & \textbf{Technology partner}\\
+\tablerule & Developed various innovative solutions based on mobile technologies in an attempt to provide new services to existing
+markets.
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% SELECTED PROJECTS %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Selected Projects And Talks}
+\begin{flushleft}
+
+\textbf{European Universities Games 2016 Mobile Applications} \\
+My responsibilities included architecting, developing and supporting the native Android application as well as integrating our back end solution with the official EUG website.
+
+\halfsectionspacing
+
+\textbf{Tour of Croatia 2016 Mobile Applications} \\
+Led the team that developed the native iOS and Android companion applications for the Tour of Croatia 2016. My responsibilities included designing the API which powered the apps, designing the application flows and architecting and developing the Android application.
+
+\halfsectionspacing
+
+\textbf{American Express MyAccount} \\
+Led the team that developed the Android and Windows Phone versions of the MyAccount mobile application using Sencha Touch and Apache Cordova.
+
+\halfsectionspacing
+
+\textbf{The highs and lows of Android app development with Xtend} \\
+Held a talk on the first Croatian droidcon (an international conference on Android development) about my experiences with developing Android applications with Xtend - an alternative language for developing on the JVM.
+
+\end{flushleft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% EDUCATION %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education}
+\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+\gray {\scshape Degree} & \textbf{Bachelor of Science in Computer Science} \\
+\gray {\scshape University} & \textbf{Faculty of Electrical Engineering and Computing, University of Zagreb} \\
+\gray {\scshape Graduation} & \textbf{October 2017} (expected) \\
+Electives & \begin{tabular}{@{} p{0.475\textwidth} p{0.500\textwidth}} \\
+	PHP application development basics (OIPA) & Basic use of Linux (OKOSL) \\
+	Advanced use of Linux (NKOSL) & Web project development (IZRWEB) \\
+	Programming in Haskell (PUH) & Scripting languages (SKRJEZ) \\
+	Network programming (MREPRO) & Competitive programming (NATPRO) \\
+	Introduction to Java programming language (OPJJ)
+\end{tabular} \\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% ACTIVITIES %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Competitions and awards}
+\begin{tabular}{p{0.47500\textwidth} p{0.52500\textwidth}}
+\begin{tabular}[t]{@{} p{0.3500\textwidth} p{0.1500\textwidth} }
+\textbf{English, national competition} & \nth{2} place \\
+\textbf{VIP Android Challenge} & \nth{5} place \\
+\textbf{BlackBerry 10 Limited Edition} & recipient \\
+\textbf{Best Code Challenge 2014} & \nth{4} place \\
+\textbf{Telegram BlackBerry 10 contest} & \nth{2} place \\
+\textbf{Elektrijada 2015, Informatics (team)} & \nth{2} place \\
+\textbf{Copenhacks 2016} & \nth{1} place \\
+\end{tabular}
+&
+\begin{tabular}[t]{@{} p{0.3500\textwidth} p{0.1500\textwidth} }
+\textbf{Informatics, national competition} & \nth{2} place \\
+\textbf{CROZ Codequest} & \nth{1} place \\
+\textbf{App Start Context 2013} & Finalist \\
+\textbf{mStart Hacktition} & \nth{2} place \\
+\textbf{Elektrijada 2016, Informatics (team)} & \nth{1} place \\
+\textbf{LC Code Challenge} & \nth{1} place \\
+\textbf{Agrokor "Inovacijom do poslovne prilike"} & \nth{1} place \\
+\end{tabular}
+\end{tabular}
+
+
+\end{center}
+\end{document}
