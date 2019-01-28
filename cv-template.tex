@@ -6,11 +6,29 @@
 % We could set them manually, but it's much more convenient with geometry package.
 % Showframe may be used to see the margins while setting them.
 %\usepackage{showframe}
-\usepackage[top=0.25in, bottom=0.25in, left=0.5in, right=0.5in]{geometry}
+\usepackage[top=0.25in, bottom=0.25in, left=0.5in, right=0.5in, includefoot]{geometry}
+
+% We want to add additional information to the header and footer of each page
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\fancyhead{}
+\lfoot{\href{https://psegina.com/cv.pdf}{https://psegina.com/cv.pdf}}
+\cfoot{Page \thepage{} of \pageref{LastPage}}
+\rfoot{\today}
 
 % We want to have good-looking clickable URLs to personal homepage or mailto links,
 % without having the red default borders around them.
 \usepackage[pdfborder={0 0 0}]{hyperref}
+
+% PDF metadata
+\hypersetup{
+	pdfauthor={Petar Šegina},
+	pdftitle={Petar Šegina - CV},
+	pdfkeywords={psegina;cv}
+}
 
 % Fontawesome is used for the cool icons used throughout the CV
 \usepackage{fontawesome}
@@ -44,7 +62,7 @@
 
 \begin{document}
 \begin{center}
-\pagenumbering{gobble} % Turn off page numbering
+%\pagenumbering{gobble} % Turn off page numbering
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,12 +103,20 @@ Petar Šegina
 
 % Paragraph width factors were determined experimentally, sadly.
 \section{Work Experience}
+\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+\gray {\scshape Employer} & \textbf{Google} \hfill Zürich, Switzerland \\
+\gray {\scshape Period} & \textbf{July 2018 --- October 2018} (3.5 months) \hfill \\
+\gray {\scshape Job Title} & \textbf{Site Reliability Engineering Intern, Google Docs}\\
+\tablerule & Designed and developed an internal validation and testing framework for Google Docs, Sheets, Presentations and Drawings documents.
+\end{tabular}
+
+\innersectionspacing
 
 \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
 \gray {\scshape Employer} & \textbf{Google} \hfill London, United Kingdom \\
 \gray {\scshape Period} & \textbf{July 2017 --- September 2017} (3 months) \hfill \\
 \gray {\scshape Job Title} & \textbf{Software Engineering Intern, Android UI Toolkit}\\
-\tablerule & Implemented a user-facing feature that will be present in the next release of Android - P.
+\tablerule & Implemented the user-facing animation for the Smart Text Select feature in Android Pie. The feature was integrated into the very core of the Android framework by contributing to low-level components such as TextView and is now a part of the Android Open Source Project.
 \end{tabular}
 
 \innersectionspacing
@@ -99,7 +125,7 @@ Petar Šegina
 \gray {\scshape Employer} & \textbf{JustUpped} \hfill Zagreb, Croatia (remote)\\
 \gray {\scshape Period} & \textbf{January 2017 --- June 2017} (6 months) \hfill Munich, Germany \\
 \gray {\scshape Job Title} & \textbf{Android Team Lead}\\
-\tablerule & Architected and worked on the Android client for a new real-time social network and helped interview, hire and onboard new members as well as provide them with technical guidance.
+\tablerule & Architected and worked on the Android client for a new real-time social network and helped interview, hire and onboard three new members as well as provide them with technical guidance.
 \end{tabular}
 
 \innersectionspacing
@@ -108,7 +134,7 @@ Petar Šegina
 \gray {\scshape Employer} & \textbf{Microsoft} \hfill Dublin, Ireland \\
 \gray {\scshape Period} & \textbf{July 2016 --- October 2016} (3 months) \\
 \gray {\scshape Job Title} & \textbf{Software Engineering Intern, Office Marketplace Experience} \\
-\tablerule & Supported the migration between two build systems by making sure existing test automation continued to work by analyzing, debugging and improving existing solutions.
+\tablerule & Supported the migration between two build systems and two version control systems by making sure existing test automation continued to work by analyzing, debugging, fixing and improving existing solutions and streamlining them as part of a continuous integration cycle.
 \end{tabular}
 
 \innersectionspacing
@@ -116,26 +142,79 @@ Petar Šegina
 \begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
 \gray {\scshape Employer} & \textbf{CROZ d.o.o.} \hfill Zagreb, Croatia \\
 \gray {\scshape Period} & \textbf{June 2012 --- June 2016} (4 years) \\
-\gray {\scshape Job Title} & \textbf{Software, tools, architecture and integration consultant}\\
-\tablerule & Worked on various aspects (front end, back end, mobile) of projects of all sizes and gained experience in building and integrating larger systems, as well as leading smaller teams and projects.
+\gray {\scshape Job Title} & \textbf{Software, tools, architecture and integration consultant} (part-time)\\
+\tablerule & Part-time software developer designing and working on various mobile, web and back-end solutions. Projects ranged from simple mobile applications to complex enterprise systems for key customers, including banks and telecoms. My responsibilities included software design, development, and integration, on-site customer consulting as well as leading, educating, and mentoring smaller teams.
 \end{tabular}
 
 \innersectionspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% EDUCATION %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education}
+\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+\gray {\scshape Degree} & \textbf{Master of Science in Computer Science} (pursuing, expected July 2019) \\
+\gray {\scshape Focus} & \textbf{Distributed systems and load forecasting} \\
+\gray {\scshape University} & \textbf{Faculty of Electrical Engineering and Computing, University of Zagreb} \\
+Select courses & \begin{tabular}{@{} p{0.45\textwidth} p{0.500\textwidth}} \\
+	Artificial Intelligence (34285) & Distributed Systems (34456) \\
+	Distributed Big Data Processing (147660) & Analysis of massive data sets (147658) \\
+	Advanced Algorithms and Data Structures (34395) & Formal Methods in System Design (34401) \\
+	Fuzzy, Evolutionary and Neuro-computing (34475) & Heuristic Optimization Methods (72561) \\
+\end{tabular} \\
+\end{tabular}
+
+\innersectionspacing
+
+\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
+\gray {\scshape Degree} & \textbf{Bachelor of Science in Computer Science} (graduated July 2017) \\
+\gray {\scshape University} & \textbf{Faculty of Electrical Engineering and Computing, University of Zagreb} \\
+\gray {\scshape Thesis} & \textbf{Secure and Scalable Remote Execution of Students’ Programming Assignments} \\
+Electives & \begin{tabular}{@{} p{0.45\textwidth} p{0.500\textwidth}} \\
+	PHP Application Development Basics (58312) & Basic Use of Linux (86495) \\
+	Web project development (IZRWEB) & Advanced Use of Linux (86484) \\
+	Programming in Haskell (127252) & Competitive programming (65973) \\
+	Introduction to Java programming language (38047)
+\end{tabular} \\
+\end{tabular}
+
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%% SELECTED PROJECTS %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Selected Projects And Talks}
+\section{Select Projects And Talks}
 \begin{flushleft}
 
+\textbf{STEM Games 2018} \\
+Participated in the organisation of the 2018 STEM Games held in Poreč, Croatia. I was part of the team that organised the Technology Arena, an interactive software engineering competition for students of various backgrounds. For the competition platform, I built the front-end using a modern stack based on Vue, Pug, SASS and PhoenixJS, and I integrated the front-end with the Elixir/Phoenix-based back-end.
+
+\halfsectionspacing
+
+\textbf{Myo.de} \\
+Myo is an up and coming startup in the elderly care industry. I assisted the Myo team in modernising their back-end stack and migrating their development team from a consulting agency to an in-house team by helping hire an in-house CTO. I also built the basics of their new back-end for their mobile applications, building it with Spring and Kotlin.
+
+\halfsectionspacing
+
+\textbf{Madison.hr} \\
+Madison is a public relations agency based in Zagreb, Croatia. I was part of the team that built their new website, building the front-end part of a modern Ruby on Rails application which allows the team to perform edits to the site in real-time using an intuitive WYSIWYG approach implemented with Phrasing.
+
+\halfsectionspacing
+
+\textbf{Sumirra} \\
+Sumirra was a startup which allowed Croatian students to see an aggregation of their student incomes and their tax obligations, helping them and their parents avoid hefty tax back payments caused by unclear taxation laws. As part of the core team, using Kotlin and Spring, I built the back-end services which scraped and aggregated income data. Sumirra won the 2017 App Start Contest and was a part of SPOCK, a startup incubator. Sumirra gained a lot of support and following, but work was ultimately halted due to a lack of institutional support.
+
+\halfsectionspacing
+
 \textbf{European Universities Games 2016 Mobile Applications} \\
-My responsibilities included architecting, developing and supporting the native Android application as well as integrating our back end solution with the official EUG website.
+I was part of the team that built the mobile companion apps for the European Universities Games held in Zagreb, Croatia. My responsibilities included architecting, developing and supporting the native Android application written in Kotlin, as well as integrating our back end solution with the official EUG website.
 
 \halfsectionspacing
 
 \textbf{Tour of Croatia 2016 Mobile Applications} \\
-Led the team that developed the native iOS and Android companion applications for the Tour of Croatia 2016. My responsibilities included designing the API which powered the apps, designing the application flows and architecting and developing the Android application.
+Led the team that developed the native iOS and Android companion applications for the Tour of Croatia 2016. My responsibilities included designing the API which powered the apps, designing the application flows and architecting and developing the Android application, written in Kotlin.
 
 \halfsectionspacing
 
@@ -149,23 +228,30 @@ Held a talk on the first Croatian droidcon (an international conference on Andro
 
 \end{flushleft}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%% EDUCATION %%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% Open source contributions %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Education}
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Pursuing} & \textbf{Master of Science in Computer Science} (expected October 2019) \\
-\gray {\scshape Degree} & \textbf{Bachelor of Science in Computer Science} (graduated October 2017) \\
-\gray {\scshape University} & \textbf{Faculty of Electrical Engineering and Computing, University of Zagreb} \\
-\end{tabular}
+\section{Notable Open Source Contributions}
+\begin{flushleft}
+
+\textbf{CyanogenMod 6 - Android gallery} \\
+CyanogenMod was the most popular after-market Android-based operating system. During the CyanogenMod 6 days, I submitted patches to the Android gallery app which significantly increased the resolution of the images displayed in the gallery by making better use of available memory. These changes were also featured in an XDA-Developers article.
+
+\halfsectionspacing
+
+\textbf{HbnContainer} \\
+HbnContainer is a data connector for Vaadin based on the popular Hibernate ORM. I expanded its functionality by implementing the new Filtering API which enabled its users to perform better sorting and filtering of Hibernate data sets.
+
+\end{flushleft}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%% ACTIVITIES %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Competitions and awards}
-\begin{tabular}{p{0.47500\textwidth} p{0.52500\textwidth}}
+\section{Competitions And Awards}
+\begin{tabular}{@{} p{0.5\textwidth} p{0.5\textwidth}}
 \begin{tabular}[t]{@{} p{0.3500\textwidth} p{0.1500\textwidth} }
 \textbf{Palantir Zagreb Extreme Start-up} & \nth{1} place \\
 \textbf{Elektrijada 2017, Informatics} (team) & \nth{2} place \\
