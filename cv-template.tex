@@ -82,7 +82,7 @@ Petar Šegina
 % There are many other cool icons or social networks or contact info that could be used here
 \begin{tabular}{ l l l }
 
-{\large\faHome} Kanton Zürich, Switzerland &
+{\large\faHome} Zürich, Switzerland &
 {\large\faPhone} \href{tel:+41766453067}{\texttt{+41766453067}} &
 {\large\faEnvelope} \href{mailto:say-hi@psegina.com}{\texttt{say-hi@psegina.com}} \\
 
@@ -97,82 +97,111 @@ Petar Šegina
 %%%%%%%% WORK EXPERIENCE %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% The table's code may be a bit tedious to read.
-% An option is to make \newcommand for the row entries, but
-% this way offers more flexibility which I personally did use.
+% Parameters
+% 1 - Employer
+% 2 - Location
+% 3 - Time
+% 4 - Time - Short
+% 5 - Role
+% 6 - Description
+\newcommand{\experience}[6]{
+	\begin{tabular}{ >{\hfill}p{0.1\textwidth} p{0.86\textwidth} }
+	\gray {\scshape Employer} & \textbf{#1} \hfill #2 \\
+	\gray {\scshape Period} & \textbf{#3} (#4) \hfill \\
+	\gray {\scshape Position} & \textbf{#5} \\
+	\tablerule & #6
+	\end{tabular}
+}
+
+\newenvironment{projectList}
+	{
+		\begin{itemize}
+			\setlength{\itemsep}{0pt}
+			\setlength{\leftmargin}{0pt}
+			\setlength{\itemindent}{0pt}
+	}
+	{\end{itemize}}
 
 % Paragraph width factors were determined experimentally, sadly.
 
 \section{Work Experience}
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{Google Switzerland GmbH} \hfill Zürich, Switzerland \\
-\gray {\scshape Period} & \textbf{June 2019 --- now} (2 years+) \hfill \\
-\gray {\scshape Job Title} & \textbf{Software Engineer, Site Reliability Engineering} (full-time)\\
-\tablerule & Ensuring the reliability and availability of a globally distributed product with 1B+ active users.
-\end{tabular}
+
+\experience
+	{Google Switzerland GmbH}
+	{Zürich, Switzerland}
+	{June 2019 --- now}
+	{3 years+}
+	{Software Engineer, Site Reliability Engineering}
+	{
+		Ensuring the reliability and availability of globally distributed Google Workspace products, serving 1B+ active users.
+		
+		Highlights
+		\begin{projectList}
+			\item{Made schema changes safer for hundreds of internal databases by rolling out push time safety checks}
+			\item{Reduced crash rates, and improved behavior when a critical subsystem is unavailable}
+			\item{Identified, escalated, and recovered a data loss incident (\#\#k items affected)}
+			\item{On-call rotation with 12 hour shifts, 5 minute response time}
+			\item{Performed regular technical interviews}
+			\item{Improved the team on-boarding process, mentored teammates, hosted interns}
+		\end{projectList}
+	}
 
 \innersectionspacing
 
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{CodeControl GmbH for smava GmbH} \hfill Zagreb, Croatia (remote) \\
-\gray {\scshape Period} & \textbf{November 2018 --- January 2019} (3 months) \hfill Berlin, Germany \\
-\gray {\scshape Job Title} & \textbf{Back-end Software Engineer} (full-time)\\
-\tablerule & As part of CodeControl's specialist project team, I worked on the Spring-powered back-end of smava's new consumer loan product. My main responsibility was implementing complex business rules, building the API for the mobile apps and integrating the solution with solarisBank.
-\end{tabular}
+\experience
+	{Self-employed\normalfont{, owner at Razvoj budućnosti d.o.o.}}
+	{}
+	{2017 --- 2019}
+	{15 months contracted}
+	{Software development consultant}
+	{
+		In partnership with CodeControl GmbH, I consulted several tech startups in Germany.
+		\begin{projectList}
+			\item{For a fintech startup, did back-end software engineering in Spring, integrating with solarisBank, and providing an API for the mobile apps.} % smava Nov 18 - Jan 19
+			\item{For a medtech startup, I helped migrate their development team from a consulting agency to an in-house team by interviewing and hiring a CTO, and building the basics of their new backend in Spring and Kotlin} % Myosotis, Jan 18 - June 18
+      	\item{For a social startup, acted as the team lead on an Android client for a real-time social network. Helped interview, hire, and onboard three members.} % JustUpped, Jan 17 - Jun 17
+		\end{projectList}
+	}
+
+\innersectionspacing
+	
+\experience
+	{Google Switzerland GmbH}
+	{Zürich, Switzerland}
+	{July 2018 --- October 2018}
+	{3.5 months}
+	{Site Reliability Engineering Intern, Google Docs}
+	{Designed and implemented a document validation and testing framework.}
 
 \innersectionspacing
 
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{Google Switzerland GmbH} \hfill Zürich, Switzerland \\
-\gray {\scshape Period} & \textbf{July 2018 --- October 2018} (3.5 months) \hfill \\
-\gray {\scshape Job Title} & \textbf{Site Reliability Engineering Intern, Google Docs} (full-time, internship)\\
-\tablerule & Designed and developed an internal validation and testing framework for Google Docs, Sheets, Presentations and Drawings documents to improve the consistency and reliability of Docs.
-\end{tabular}
+\experience
+	{Google UK Ltd}
+	{London, United Kingdom}
+	{July 2017 --- September 2017}
+	{3 months}
+	{Software Engineering Intern, Android UI Toolkit}
+	{Implemented the Smart Text Select animation introduced in Android Pie.}
 
 \innersectionspacing
 
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{Myosotis GmbH} \hfill Zagreb, Croatia (remote) \\
-\gray {\scshape Period} & \textbf{January 2018 --- June 2018} (6 months) \hfill \\
-\gray {\scshape Job Title} & \textbf{Software Engineering consultant} (part-time)\\
-\tablerule & Assisted the Myo team in modernising their back-end stack and migrating their development team from a consulting agency to an in-house team by helping hire an in-house CTO. I also built the basics of their new back-end for their mobile applications with Spring and Kotlin.
-\end{tabular}
+\experience
+	{Microsoft Ireland Research}
+	{Dublin, Ireland}
+	{July 2016 --- October 2016}
+	{3 months}
+	{Software Engineering Intern, Office Marketplace Experience}
+	{Fixed test automation that stopped working after a version control and build system migration.}
 
 \innersectionspacing
 
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{Google UK Ltd} \hfill London, United Kingdom \\
-\gray {\scshape Period} & \textbf{July 2017 --- September 2017} (3 months) \hfill \\
-\gray {\scshape Job Title} & \textbf{Software Engineering Intern, Android UI Toolkit} (full-time, internship)\\
-\tablerule & Implemented the user-facing animation for the Smart Text Select feature in Android Pie. The feature was integrated into the very core of the Android framework by contributing to low-level components such as TextView and is now a part of the Android Open Source Project.
-\end{tabular}
-
-\innersectionspacing
-
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{JustUpped} \hfill Zagreb, Croatia (remote)\\
-\gray {\scshape Period} & \textbf{January 2017 --- June 2017} (6 months) \hfill Munich, Germany \\
-\gray {\scshape Job Title} & \textbf{Android Team Lead} (full-time)\\
-\tablerule & Architected and worked on the Android client for a new real-time social network and helped interview, hire and onboard three new members as well as provide them with technical guidance.
-\end{tabular}
-
-\innersectionspacing
-
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{Microsoft Ireland Research} \hfill Dublin, Ireland \\
-\gray {\scshape Period} & \textbf{July 2016 --- October 2016} (3 months) \\
-\gray {\scshape Job Title} & \textbf{Software Engineering Intern, Office Marketplace Experience} (full-time, internship)\\
-\tablerule & Supported the migration between two build systems and two version control systems by making sure existing test automation continued to work by analysing, debugging, fixing and improving existing solutions and streamlining them as part of a continuous integration cycle.
-\end{tabular}
-
-\innersectionspacing
-
-\begin{tabular}{ >{\hfill}p{0.132\textwidth} p{0.822\textwidth} }
-\gray {\scshape Employer} & \textbf{CROZ d.o.o.} \hfill Zagreb, Croatia \\
-\gray {\scshape Period} & \textbf{June 2012 --- June 2016} (4 years) \\
-\gray {\scshape Job Title} & \textbf{Software, tools, architecture and integration consultant} (part-time)\\
-\tablerule & Part-time software developer designing and working on various mobile, web and back-end solutions. Projects ranged from simple mobile applications to complex enterprise systems for key customers, including banks and telecoms. My responsibilities included software design, development, and integration, on-site customer consulting as well as leading, educating, and mentoring smaller teams.
-\end{tabular}
+\experience
+	{CROZ d.o.o.}
+	{Zagreb, Croatia}
+	{June 2012 --- June 2016}
+	{4 years}
+	{Software, tools, architecture and integration consultant \normalfont{(part-time, 50\%)}}
+	{Designed and implemented projects ranging from simple mobile applications to complex enterprise systems, with banks, telecoms, and government as clients. Provided on-site customer consulting, and lead, educated, and mentored smaller teams.}
 
 \clearpage
 
